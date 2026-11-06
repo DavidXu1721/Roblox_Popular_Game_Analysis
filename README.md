@@ -65,10 +65,10 @@ Additional variables were created to explore relationships that were not immedia
 
 | Feature | Calculation | Purpose |
 |---|---|---|
-| `active_per_million_visits` | Active / Visits × 1,000,000 | Current activity relative to cumulative traffic |
-| `active_to_favourites` | Active / Favourites × 100 | Current activity relative to accumulated favourites |
-| `favourites_per_5k_visits` | Favourites / Visits × 5,000 | Favourites relative to cumulative visits |
-| `ratings_to_favorites` | (Likes + Dislikes) / Favourites × 100 | Rating volume relative to favourites |
+| 'active_per_million_visits' | Active / Visits × 1,000,000 | Current activity relative to cumulative traffic |
+| 'active_to_favourites' | Active / Favourites × 100 | Current activity relative to accumulated favourites |
+| 'favourites_per_5k_visits' | Favourites / Visits × 5,000 | Favourites relative to cumulative visits |
+| 'ratings_to_favorites' | (Likes + Dislikes) / Favourites × 100 | Rating volume relative to favourites |
 
 These ratios are exploratory indicators, not direct measurements of retention or unique-player behaviour.
 
@@ -76,13 +76,14 @@ These ratios are exploratory indicators, not direct measurements of retention or
 
 Game names were also analysed to identify common naming conventions:
 
-- `is_halloween` – whether the name contains the word Halloween.
-- `has_square_brackets` – whether the name contains square brackets.
-- `has_emoji` – whether the name contains an emoji.
-- `has_update_keyword` – whether the name contains UPDATE, NEW, BETA or UPD.
-- `name_length` – number of characters in the game name.
+- 'is_halloween' – whether the name contains the word Halloween.
+- 'has_square_brackets' – whether the name contains square brackets.
+- 'has_emoji' – whether the name contains an emoji.
+- 'has_update_keyword' – whether the name contains UPDATE, NEW, BETA or UPD.
+- 'name_length' – number of characters in the game name.
 
-[ADD IMAGE: `images/feature_engineering.png` — optional screenshot showing the engineered columns and a sample of the resulting DataFrame.]
+<img src=' images/feature_engineering.png'
+ title='optional screenshot showing the engineered columns and a sample of the resulting DataFrame' />
 
 ## Exploratory Data Analysis
 
@@ -90,11 +91,12 @@ Game names were also analysed to identify common naming conventions:
 
 Box plots were used to examine the distributions of the numerical variables and identify unusually large or small observations.
 
-[ADD IMAGE: `images/numerical_distributions.png` — box plots of the numerical features before outlier filtering.]
+<img src=' images/numerical_distributions.png'
+ title='box plots of the numerical features before outlier filtering' />
 
 ### 2. Outlier Identification
 
-Outliers were identified using the Interquartile Range (IQR) method on `active_per_million_visits`.
+Outliers were identified using the Interquartile Range (IQR) method on 'active_per_million_visits'.
 
 This identified 151 observations outside the calculated bounds, reducing the analysis dataset from 980 to **829 games**.
 
@@ -106,7 +108,8 @@ Importantly, these observations are statistical outliers in the engineered ratio
 
 Spearman rank correlation was used to investigate monotonic relationships between the numerical variables.
 
-[ADD IMAGE: `images/correlation_heatmap.png` — Spearman correlation heatmap.]
+<img src=' images/correlation_heatmap.png'
+ title='Spearman correlation heatmap' />
 
 **Key observations**
 
@@ -122,7 +125,8 @@ Some correlations involving engineered ratios are affected by shared mathematica
 
 Scatter plots using logarithmic axes were used to investigate the relationships between cumulative visits, current active players and favourites.
 
-[ADD IMAGE: `images/engagement_scatterplots.png` — four scatter plots comparing Visits, Active, Favourites and Rating.]
+<img src=' images/engagement_scatterplots.png'
+ title='four scatter plots comparing Visits, Active, Favourites and Rating' />
 
 **Key observations**
 
@@ -145,13 +149,16 @@ Four features were examined:
 
 Pie charts were used to show how frequently each feature appeared in the filtered dataset.
 
-[ADD IMAGE: `images/naming_feature_distribution.png` — four pie charts showing the proportion of games with each naming feature.]
+<img src=' images/naming_feature_distribution.png'
+ title='four pie charts showing the proportion of games with each naming feature' />
 
 Box-and-whisker plots were then used to compare the distributions of ratings and active player counts between games with and without each feature.
 
-[ADD IMAGE: `images/naming_feature_ratings.png` — four box plots comparing ratings.]
+<img src=' images/naming_feature_ratings.png'
+ title='four box plots comparing ratings' />
 
-[ADD IMAGE: `images/naming_feature_active_players.png` — four box plots comparing active player counts, using a logarithmic y-axis.]
+<img src=' images/naming_feature_active_players.png'
+ title='four box plots comparing active player counts, using a logarithmic y-axis' />
 
 **Descriptive findings**
 
@@ -176,7 +183,7 @@ There are several limitations to consider when interpreting the results:
 
 - **Snapshot data:** The dataset does not contain historical player counts, so trends in growth, decline or retention cannot be established.
 - **Cumulative metrics:** Visits, favourites, likes and dislikes accumulate over time and do not represent unique players.
-- **Outlier filtering:** Removing observations based on `active_per_million_visits` changes the population being analysed and can affect observed relationships.
+- **Outlier filtering:** Removing observations based on 'active_per_million_visits' changes the population being analysed and can affect observed relationships.
 - **Confounding variables:** Genre, game age, update frequency and other factors may influence popularity and ratings.
 - **Naming conventions:** The presence of a particular word or symbol does not establish why a game is popular or well-rated.
 
@@ -192,7 +199,7 @@ Overall, the project demonstrates a practical workflow for cleaning a real-world
 
 ## Repository Structure
 
-```text
+'''text
 Roblox_Popular_Games_Analysis/
 │
 ├── Roblox_Popular_Games_Analysis.ipynb
@@ -207,21 +214,21 @@ Roblox_Popular_Games_Analysis/
     ├── naming_feature_distribution.png
     ├── naming_feature_ratings.png
     └── naming_feature_active_players.png
-```
+'''
 
 ## Running the Project
 
 1. Clone the repository.
 2. Download the dataset from [Kaggle](https://www.kaggle.com/datasets/biggiefats/roblox-games-dataset).
-3. Place `roblox_games.csv` in the project root directory.
+3. Place 'roblox_games.csv' in the project root directory.
 4. Install the required dependencies:
 
-```bash
+'''bash
 pip install pandas matplotlib seaborn scipy jupyter
-```
+'''
 
 5. Open the notebook:
 
-```bash
+'''bash
 jupyter notebook Roblox_Popular_Games_Analysis.ipynb
-```
+'''
