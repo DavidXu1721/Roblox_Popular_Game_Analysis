@@ -199,7 +199,7 @@ Overall, the project demonstrates a practical workflow for cleaning a real-world
 
 ## Repository Structure
 
-'''text
+```text
 Roblox_Popular_Games_Analysis/
 │
 ├── Roblox_Popular_Games_Analysis.ipynb
@@ -214,7 +214,7 @@ Roblox_Popular_Games_Analysis/
     ├── naming_feature_distribution.png
     ├── naming_feature_ratings.png
     └── naming_feature_active_players.png
-'''
+```
 
 ## Running the Project
 
