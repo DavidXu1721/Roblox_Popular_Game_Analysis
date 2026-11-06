@@ -82,7 +82,7 @@ Game names were also analysed to identify common naming conventions:
 - 'has_update_keyword' – whether the name contains UPDATE, NEW, BETA or UPD.
 - 'name_length' – number of characters in the game name.
 
-<img src=' images/feature_engineering.png'
+<img src=' ./images/feature_engineering.png'
  title='optional screenshot showing the engineered columns and a sample of the resulting DataFrame' />
 
 ## Exploratory Data Analysis
@@ -91,7 +91,7 @@ Game names were also analysed to identify common naming conventions:
 
 Box plots were used to examine the distributions of the numerical variables and identify unusually large or small observations.
 
-<img src=' images/numerical_distributions.png'
+<img src=' ./images/numerical_distributions.png'
  title='box plots of the numerical features before outlier filtering' />
 
 ### 2. Outlier Identification
@@ -108,7 +108,7 @@ Importantly, these observations are statistical outliers in the engineered ratio
 
 Spearman rank correlation was used to investigate monotonic relationships between the numerical variables.
 
-<img src=' images/correlation_heatmap.png'
+<img src=' ./images/correlation_heatmap.png'
  title='Spearman correlation heatmap' />
 
 **Key observations**
@@ -125,7 +125,7 @@ Some correlations involving engineered ratios are affected by shared mathematica
 
 Scatter plots using logarithmic axes were used to investigate the relationships between cumulative visits, current active players and favourites.
 
-<img src=' images/engagement_scatterplots.png'
+<img src=' ./images/engagement_scatterplots.png'
  title='four scatter plots comparing Visits, Active, Favourites and Rating' />
 
 **Key observations**
@@ -149,15 +149,15 @@ Four features were examined:
 
 Pie charts were used to show how frequently each feature appeared in the filtered dataset.
 
-<img src=' images/naming_feature_distribution.png'
+<img src=' ./images/naming_feature_distribution.png'
  title='four pie charts showing the proportion of games with each naming feature' />
 
 Box-and-whisker plots were then used to compare the distributions of ratings and active player counts between games with and without each feature.
 
-<img src=' images/naming_feature_ratings.png'
+<img src=' ./images/naming_feature_ratings.png'
  title='four box plots comparing ratings' />
 
-<img src=' images/naming_feature_active_players.png'
+<img src=' ./images/naming_feature_active_players.png'
  title='four box plots comparing active player counts, using a logarithmic y-axis' />
 
 **Descriptive findings**
